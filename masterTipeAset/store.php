@@ -2,12 +2,10 @@
 session_start();
 require_once '../helper/connection.php';
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$username = $_POST['username'];
-$password = $_POST['password'];
+$namaTipeAset = $_POST['namaTipeAset'];
+$jenisAset = $_POST['jenisAset'];
 
-$query = mysqli_query($connection, "insert into masteradmin(name, email, username, password) value('$name', '$email', '$username', '$password')");
+$query = mysqli_query($connection, "insert into mastertipeaset(namaTipeAset, jenisAset) value('$namaTipeAset', '$jenisAset')");
 if ($query) {
   $_SESSION['info'] = [
     'status' => 'success',

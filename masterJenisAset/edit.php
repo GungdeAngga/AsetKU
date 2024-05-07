@@ -8,7 +8,7 @@ $query = mysqli_query($connection, "SELECT * FROM masterjenisaset WHERE id_jenis
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>Ubah Data Akun</h1>
+    <h1>Ubah Data Jenis Aset</h1>
     <a href="./index.php" class="btn btn-light">Kembali</a>
   </div>
   <div class="row">
@@ -33,7 +33,6 @@ $query = mysqli_query($connection, "SELECT * FROM masterjenisaset WHERE id_jenis
                   <td>
                 </tr>
               </table>
-
             <?php } ?>
           </form>
         </div>

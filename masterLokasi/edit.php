@@ -2,13 +2,13 @@
 require_once '../layout/_top.php';
 require_once '../helper/connection.php';
 
-$id_akun = $_GET['id_akun'];
-$query = mysqli_query($connection, "SELECT * FROM masteradmin WHERE id_akun='$id_akun'");
+$id_lokasi = $_GET['id_lokasi'];
+$query = mysqli_query($connection, "SELECT * FROM masterlokasi WHERE id_lokasi='$id_lokasi'");
 ?>
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>Ubah Data Akun</h1>
+    <h1>Ubah Data Nama Tempat Aset</h1>
     <a href="./index.php" class="btn btn-light">Kembali</a>
   </div>
   <div class="row">
@@ -20,23 +20,11 @@ $query = mysqli_query($connection, "SELECT * FROM masteradmin WHERE id_akun='$id
             <?php
             while ($row = mysqli_fetch_array($query)) {
             ?>
-              <input type="hidden" name="id_akun" value="<?= $row['id_akun'] ?>">
+              <input type="hidden" name="id_lokasi" value="<?= $row['id_lokasi'] ?>">
               <table cellpadding="8" class="w-100">
                 <tr>
-                  <td>Nama</td>
-                  <td><input class="form-control" type="text" name="name" size="20" required value="<?= $row['name'] ?>" disabled></td>
-                </tr>
-                <tr>
-                  <td>Email</td>
-                  <td><input class="form-control" type="email" name="email" size="20" required value="<?= $row['email'] ?>"></td>
-                </tr>
-                <tr>
-                  <td>Username</td>
-                  <td><input class="form-control" type="text" name="username" size="20" required value="<?= $row['username'] ?>"></td>
-                </tr>
-                <tr>
-                  <td>Passwrod</td>
-                  <td><input class="form-control" type="password" name="password" size="20" required value="<?= $row['password'] ?>"></td>
+                  <td>Nama Tempat Lokasi Aset</td>
+                  <td><input class="form-control" type="text" name="namaLokasi" size="20" required value="<?= $row['namaLokasi'] ?>"></td>
                 </tr>
                 <tr>
                   <td>
@@ -45,7 +33,6 @@ $query = mysqli_query($connection, "SELECT * FROM masteradmin WHERE id_akun='$id
                   <td>
                 </tr>
               </table>
-
             <?php } ?>
           </form>
         </div>

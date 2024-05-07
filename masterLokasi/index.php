@@ -2,12 +2,12 @@
 require_once '../layout/_top.php';
 require_once '../helper/connection.php';
 
-$result = mysqli_query($connection, "SELECT * FROM masteradmin");
+$result = mysqli_query($connection, "SELECT * FROM masterlokasi");
 ?>
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>List Akun</h1>
+    <h1>List Tempat Lokasi Aset</h1>
     <a href="./create.php" class="btn btn-primary">Tambah Data</a>
   </div>
   <div class="row">
@@ -18,10 +18,8 @@ $result = mysqli_query($connection, "SELECT * FROM masteradmin");
             <table class="table table-hover table-striped w-100" id="table-1">
               <thead>
                 <tr>
-                  <th>Nama</th>
-                  <th>Email</th>
-                  <th>Username</th>
-                  <th>Password</th>
+                  <th>Nama Tempat Lokasi Aset</th>
+
                   <th style="width: 150">Aksi</th>
                 </tr>
               </thead>
@@ -31,15 +29,12 @@ $result = mysqli_query($connection, "SELECT * FROM masteradmin");
                 ?>
 
                   <tr>
-                    <td><?= $data['name'] ?></td>
-                    <td><?= $data['email'] ?></td>
-                    <td><?= $data['username'] ?></td>
-                    <td><?= $data['password'] ?></td>
+                    <td><?= $data['namaLokasi'] ?></td>
                     <td>
-                      <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?id_akun=<?= $data['id_akun'] ?>">
+                      <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?id_lokasi=<?= $data['id_lokasi'] ?>">
                         <i class="fas fa-trash fa-fw"></i>
                       </a>
-                      <a class="btn btn-sm btn-info" href="edit.php?id_akun=<?= $data['id_akun'] ?>">
+                      <a class="btn btn-sm btn-info" href="edit.php?id_lokasi=<?= $data['id_lokasi'] ?>">
                         <i class="fas fa-edit fa-fw"></i>
                       </a>
                     </td>

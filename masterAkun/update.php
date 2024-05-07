@@ -2,6 +2,7 @@
 session_start();
 require_once '../helper/connection.php';
 
+$id_akun = $_POST['id_akun'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $username = $_POST['username'];

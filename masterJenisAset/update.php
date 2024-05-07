@@ -2,10 +2,10 @@
 session_start();
 require_once '../helper/connection.php';
 
+$id_jenisAset = $_POST['id_jenisAset'];
 $namaJenisAset = $_POST['namaJenisAset'];
 
-
-$query = mysqli_query($connection, "UPDATE masteradmin SET namaJenisAset = 'namaJenisAset', WHERE id_jenisAset = '$id_jenisAset'");
+$query = mysqli_query($connection, "UPDATE masterjenisaset SET namaJenisAset = '$namaJenisAset' WHERE id_jenisAset = '$id_jenisAset'");
 if ($query) {
   $_SESSION['info'] = [
     'status' => 'success',

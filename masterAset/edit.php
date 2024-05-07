@@ -8,7 +8,7 @@ $query = mysqli_query($connection, "SELECT * FROM mastertipeaset WHERE id_tipeAs
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>Ubah Data Tipe Aset</h1>
+    <h1>Ubah Data Aset</h1>
     <a href="./index.php" class="btn btn-light">Kembali</a>
   </div>
   <div class="row">

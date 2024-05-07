@@ -2,12 +2,11 @@
 session_start();
 require_once '../helper/connection.php';
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$username = $_POST['username'];
-$password = $_POST['password'];
+$id_tipeAset = $_POST['id_tipeAset'];
+$namaTipeAset = $_POST['namaTipeAset'];
+$jenisAset = $_POST['jenisAset'];
 
-$query = mysqli_query($connection, "UPDATE masteradmin SET name = '$name', email = '$email', username = '$username', password = '$password' WHERE id_akun = '$id_akun'");
+$query = mysqli_query($connection, "UPDATE mastertipeaset SET namaTipeAset = '$namaTipeAset', jenisAset = '$jenisAset'  WHERE id_tipeAset = '$id_tipeAset'");
 if ($query) {
   $_SESSION['info'] = [
     'status' => 'success',

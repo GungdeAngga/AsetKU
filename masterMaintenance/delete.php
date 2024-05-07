@@ -2,9 +2,9 @@
 session_start();
 require_once '../helper/connection.php';
 
-$id_tipeAset = $_GET['id_tipeAset'];
+$id_mt = $_GET['id_mt'];
 
-$result = mysqli_query($connection, "DELETE FROM mastertipeaset WHERE id_tipeAset='$id_tipeAset'");
+$result = mysqli_query($connection, "DELETE FROM datamt WHERE id_mt='$id_mt'");
 
 if (mysqli_affected_rows($connection) > 0) {
   $_SESSION['info'] = [

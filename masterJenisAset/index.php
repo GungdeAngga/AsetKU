@@ -7,7 +7,7 @@ $result = mysqli_query($connection, "SELECT * FROM masterjenisaset");
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>List Akun</h1>
+    <h1>List Jenis Aset</h1>
     <a href="./create.php" class="btn btn-primary">Tambah Data</a>
   </div>
   <div class="row">

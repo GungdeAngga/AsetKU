@@ -22,13 +22,9 @@ $query = mysqli_query($connection, "SELECT * FROM masteradmin WHERE id_akun='$id
             ?>
               <input type="hidden" name="id_akun" value="<?= $row['id_akun'] ?>">
               <table cellpadding="8" class="w-100">
-              <tr>
-                  <td>ID Akun</td>
-                  <td><input class="form-control" required value="<?= $row['id_akun'] ?>" disabled></td>
-                </tr>
                 <tr>
                   <td>Nama</td>
-                  <td><input class="form-control" type="name" name="name" size="20" required value="<?= $row['name'] ?>"></td>
+                  <td><input class="form-control" type="text" name="name" size="20" required value="<?= $row['name'] ?>"></td>
                 </tr>
                 <tr>
                   <td>Email</td>
@@ -49,7 +45,6 @@ $query = mysqli_query($connection, "SELECT * FROM masteradmin WHERE id_akun='$id
                   <td>
                 </tr>
               </table>
-
             <?php } ?>
           </form>
         </div>

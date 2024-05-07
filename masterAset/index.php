@@ -2,12 +2,12 @@
 require_once '../layout/_top.php';
 require_once '../helper/connection.php';
 
-$result = mysqli_query($connection, "SELECT * FROM mastertipeaset");
+$result = mysqli_query($connection, "SELECT * FROM dataaset");
 ?>
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>List Tipe Aset</h1>
+    <h1>List Data Aset</h1>
     <a href="./create.php" class="btn btn-primary">Tambah Data</a>
   </div>
   <div class="row">
@@ -18,8 +18,16 @@ $result = mysqli_query($connection, "SELECT * FROM mastertipeaset");
             <table class="table table-hover table-striped w-100" id="table-1">
               <thead>
                 <tr>
-                  <th>Nama Tipe Aset</th>
+                  <th>Nama Aset</th>
+                  <th>Total Barang</th>
+                  <th>Nama Lokasi Aset</th>
                   <th>Nama Jenis Aset</th>
+                  <th>Nama Tipe Aset</th>
+                  <th>Supplier</th>
+                  <th>Harga</th>
+                  <th>Tanggal Pembelian</th>
+                  <th>Garansi</th>
+                  <th>Deskripsi</th>
                   <th style="width: 150">Aksi</th>
                 </tr>
               </thead>
@@ -29,13 +37,21 @@ $result = mysqli_query($connection, "SELECT * FROM mastertipeaset");
                 ?>
 
                   <tr>
-                    <td><?= $data['namaTipeAset'] ?></td>
+                    <td><?= $data['namaAset'] ?></td>
+                    <td><?= $data['totalBarang'] ?></td>
+                    <td><?= $data['lokasiAset'] ?></td>
                     <td><?= $data['jenisAset'] ?></td>
+                    <td><?= $data['tipeAset'] ?></td>
+                    <td><?= $data['supplier'] ?></td>
+                    <td><?= $data['harga'] ?></td>
+                    <td><?= $data['tanggalPembelian'] ?></td>
+                    <td><?= $data['garansi'] ?></td>
+                    <td><?= $data['deskripsi'] ?></td>
                     <td>
-                      <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?id_tipeAset=<?= $data['id_tipeAset'] ?>">
+                      <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?id_aset=<?= $data['id_aset'] ?>">
                         <i class="fas fa-trash fa-fw"></i>
                       </a>
-                      <a class="btn btn-sm btn-info" href="edit.php?id_tipeAset=<?= $data['id_tipeAset'] ?>">
+                      <a class="btn btn-sm btn-info" href="edit.php?id_aset=<?= $data['id_aset'] ?>">
                         <i class="fas fa-edit fa-fw"></i>
                       </a>
                     </td>

@@ -5,7 +5,7 @@ require_once '../helper/connection.php';
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>Tambah Akun</h1>
+    <h1>Tambah Nama Tempat Lokasi Aset</h1>
     <a href="./index.php" class="btn btn-light">Kembali</a>
   </div>
   <div class="row">
@@ -17,8 +17,8 @@ require_once '../helper/connection.php';
             <table cellpadding="8" class="w-100">
 
               <tr>
-                <td>Nama Jenis Aset</td>
-                <td><input class="form-control" type="text" name="namaJenisAset" size="20" required></td>
+                <td>Nama Tempat Lokasi Aset</td>
+                <td><input class="form-control" type="text" name="namaLokasi" size="20" required></td>
               </tr>
               
               <tr>

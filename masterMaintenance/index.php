@@ -2,12 +2,12 @@
 require_once '../layout/_top.php';
 require_once '../helper/connection.php';
 
-$result = mysqli_query($connection, "SELECT * FROM mastertipeaset");
+$result = mysqli_query($connection, "SELECT * FROM datamt");
 ?>
 
 <section class="section">
   <div class="section-header d-flex justify-content-between">
-    <h1>List Tipe Aset</h1>
+    <h1>List Data Maintenance</h1>
     <a href="./create.php" class="btn btn-primary">Tambah Data</a>
   </div>
   <div class="row">
@@ -18,8 +18,12 @@ $result = mysqli_query($connection, "SELECT * FROM mastertipeaset");
             <table class="table table-hover table-striped w-100" id="table-1">
               <thead>
                 <tr>
-                  <th>Nama Tipe Aset</th>
-                  <th>Nama Jenis Aset</th>
+                  <th>Nama Aset</th>
+                  <th>Biaya Maintenance</th>
+                  <th>Tanggal Mulai</th>
+                  <th>Tanggal selesai</th>
+                  <th>Keterangan</th>
+                  <th>Status</th>
                   <th style="width: 150">Aksi</th>
                 </tr>
               </thead>
@@ -29,13 +33,17 @@ $result = mysqli_query($connection, "SELECT * FROM mastertipeaset");
                 ?>
 
                   <tr>
-                    <td><?= $data['namaTipeAset'] ?></td>
-                    <td><?= $data['jenisAset'] ?></td>
+                    <td><?= $data['namaAset'] ?></td>
+                    <td><?= $data['biayaMt'] ?></td>
+                    <td><?= $data['tanggalMulai'] ?></td>
+                    <td><?= $data['tanggalSelesai'] ?></td>
+                    <td><?= $data['keterangan'] ?></td>
+                    <td><?= $data['status'] ?></td>
                     <td>
-                      <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?id_tipeAset=<?= $data['id_tipeAset'] ?>">
+                      <a class="btn btn-sm btn-danger mb-md-0 mb-1" href="delete.php?id_mt=<?= $data['id_mt'] ?>">
                         <i class="fas fa-trash fa-fw"></i>
                       </a>
-                      <a class="btn btn-sm btn-info" href="edit.php?id_tipeAset=<?= $data['id_tipeAset'] ?>">
+                      <a class="btn btn-sm btn-info" href="edit.php?id_mt=<?= $data['id_mt'] ?>">
                         <i class="fas fa-edit fa-fw"></i>
                       </a>
                     </td>
