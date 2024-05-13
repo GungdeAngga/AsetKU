@@ -91,6 +91,17 @@ require_once '../helper/connection.php';
                 <td>
                   <input class="btn btn-primary" type="submit" name="proses" value="Simpan">
                   <input class="btn btn-danger" type="reset" name="batal" value="Bersihkan">
+                      
+                  <!-- qr ga kegenerate -->
+                  <?php
+                  require '../vendor/autoload.php';
+
+                  use SimpleSoftwareIO\QrCode\Generator;
+
+                  $qrcode = new Generator;
+                  $qrcode->size(80)->generate('Make a qrcode without Laravel!');
+                  ?> 
+
                 </td>
               </tr>
 
